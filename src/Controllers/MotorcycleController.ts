@@ -46,4 +46,15 @@ export default class MotorcycleController {
       this.next(e);
     }
   }
+
+  public async updateById() {
+    try {
+      const { id } = this.req.params;
+      const obj = this.req.body;
+      const carById = await this.service.updateById(id, obj);
+      return this.res.status(200).json(carById);
+    } catch (e) {
+      this.next(e);
+    }
+  }
 }
