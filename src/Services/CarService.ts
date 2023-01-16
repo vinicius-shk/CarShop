@@ -31,4 +31,12 @@ export default class CarService {
     if (!carResponse) throw new HttpError(404, 'Car not found');
     return this.createCarDomain(carResponse);
   }
+
+  public async updateById(id: string, obj: ICar) {
+    const carODM = new CarODM();  
+    if (id.length !== 24) throw new HttpError(422, 'Invalid mongo id');
+    const carResponse = await carODM.update(id, obj);
+    if (!carResponse) throw new HttpError(404, 'Car not found');
+    return this.createCarDomain(carResponse);
+  }
 }

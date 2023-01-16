@@ -97,34 +97,34 @@ describe('Test suit for cars', function () {
       expect((e as Error).message).to.be.equal('Car not found');
     }
   });
-  // it('Should update existing car by id', async function () {
-  //   const id = '63c58cf07f367d16a9b6463d';
-  //   const reqBody:ICar = {
-  //     model: 'Marea',
-  //     year: 1992,
-  //     color: 'Red',
-  //     status: true,
-  //     buyValue: 12.000,
-  //     doorsQty: 2,
-  //     seatsQty: 5,
-  //   };
-  //   const resolveUpdate = {
-  //     id: '63c58cf07f367d16a9b6463d',
-  //     model: 'Marea',
-  //     year: 1992,
-  //     color: 'Red',
-  //     status: true,
-  //     buyValue: 12.000,
-  //     doorsQty: 2,
-  //     seatsQty: 5,
-  //   };
+  it('Should update existing car by id', async function () {
+    const id = '63c58cf07f367d16a9b6463d';
+    const reqBody:ICar = {
+      model: 'Marea',
+      year: 1992,
+      color: 'Red',
+      status: true,
+      buyValue: 12.000,
+      doorsQty: 2,
+      seatsQty: 5,
+    };
+    const resolveUpdate = {
+      id: '63c58cf07f367d16a9b6463d',
+      model: 'Marea',
+      year: 1992,
+      color: 'Red',
+      status: true,
+      buyValue: 12.000,
+      doorsQty: 2,
+      seatsQty: 5,
+    };
 
-  //   sinon.stub(Model, 'findByIdAndUpdate').resolves(resolveUpdate);
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(resolveUpdate);
 
-  //   const service = new CarService();
-  //   const response = await service.updateById(id, reqBody);
-  //   expect(response).to.be.deep.equal(resolveUpdate);
-  // });
+    const service = new CarService();
+    const response = await service.updateById(id, reqBody);
+    expect(response).to.be.deep.equal(resolveUpdate);
+  });
   afterEach(function () {
     sinon.restore();
   });

@@ -1,7 +1,6 @@
 import Motorcycle from '../Domains/Motorcycle';
 import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcycleODM from '../Models/MotorcycleODM';
-// import HttpError from '../Utils/HttpError';
 
 export default class MotorcycleService {
   private createMotoDomain(moto: IMotorcycle | null): Motorcycle | null {
