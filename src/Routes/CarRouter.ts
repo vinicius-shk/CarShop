@@ -2,6 +2,7 @@ import express from 'express';
 import CarController from '../Controllers/CarController';
 
 const carRouter = express.Router();
+const routeById = '/cars/:id';
 
 carRouter.post(
   '/cars',
@@ -9,7 +10,7 @@ carRouter.post(
 );
 
 carRouter.get(
-  '/cars/:id',
+  routeById,
   (req, res, next) => new CarController(req, res, next).findById(),
 );
 
@@ -19,8 +20,13 @@ carRouter.get(
 );
 
 carRouter.put(
-  '/cars/:id',
+  routeById,
   (req, res, next) => new CarController(req, res, next).updateById(),
+);
+
+carRouter.delete(
+  routeById,
+  (req, res, next) => new CarController(req, res, next).delete(),
 );
 
 export default carRouter;

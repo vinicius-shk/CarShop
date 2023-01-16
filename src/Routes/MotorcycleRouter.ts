@@ -2,6 +2,7 @@ import express from 'express';
 import MotorcycleController from '../Controllers/MotorcycleController';
 
 const motorcycleRouter = express.Router();
+const routeById = '/motorcycles/:id';
 
 motorcycleRouter.post(
   '/motorcycles',
@@ -14,13 +15,18 @@ motorcycleRouter.get(
 );
 
 motorcycleRouter.get(
-  '/motorcycles/:id',
+  routeById,
   (req, res, next) => new MotorcycleController(req, res, next).findById(),
 );
 
 motorcycleRouter.put(
-  '/motorcycles/:id',
+  routeById,
   (req, res, next) => new MotorcycleController(req, res, next).updateById(),
+);
+
+motorcycleRouter.delete(
+  routeById,
+  (req, res, next) => new MotorcycleController(req, res, next).delete(),
 );
 
 export default motorcycleRouter;
