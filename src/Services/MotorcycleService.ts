@@ -4,14 +4,11 @@ import MotorcycleODM from '../Models/MotorcycleODM';
 import HttpError from '../Utils/HttpError';
 
 const error422 = 'Invalid mongo id';
-const error404 = 'Car not found';
+const error404 = 'Motorcycle not found';
 
 export default class MotorcycleService {
-  private createMotoDomain(moto: IMotorcycle | null): Motorcycle | null {
-    if (moto) {
-      return new Motorcycle(moto);
-    }
-    return null;
+  private createMotoDomain(moto: IMotorcycle): Motorcycle {
+    return new Motorcycle(moto);
   }
 
   public async register(data: IMotorcycle) {
@@ -46,8 +43,8 @@ export default class MotorcycleService {
   public async delete(id: string) {
     const motoODM = new MotorcycleODM();
     if (id.length !== 24) throw new HttpError(422, error422);
-    const carResponse = await motoODM.delete(id);
-    if (!carResponse) throw new HttpError(404, error404);
-    return null;
+    const motoResponse = await motoODM.delete(id);
+    if (!motoResponse) throw new HttpError(404, error404);
+    return this.createMotoDomain(motoResponse);
   }
 }

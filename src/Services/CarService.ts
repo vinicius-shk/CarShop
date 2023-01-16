@@ -7,11 +7,8 @@ const error422 = 'Invalid mongo id';
 const error404 = 'Car not found';
 
 export default class CarService {
-  private createCarDomain(car: ICar | null): Car | null {
-    if (car) {
-      return new Car(car);
-    }
-    return null;
+  private createCarDomain(car: ICar): Car {
+    return new Car(car);
   }
 
   public async register(data: ICar) {
@@ -48,6 +45,6 @@ export default class CarService {
     if (id.length !== 24) throw new HttpError(422, error422);
     const carResponse = await carODM.delete(id);
     if (!carResponse) throw new HttpError(404, error404);
-    return null;
+    return this.createCarDomain(carResponse);
   }
 }
