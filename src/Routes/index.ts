@@ -1,21 +1,4 @@
-import express from 'express';
-import CarController from '../Controllers/CarController';
+import carRouter from './CarRouter';
+import motorcycleRouter from './MotorcycleRouter';
 
-const carRouter = express.Router();
-
-carRouter.post(
-  '/cars',
-  (req, res, next) => new CarController(req, res, next).create(),
-);
-
-carRouter.get(
-  '/cars/:id',
-  (req, res, next) => new CarController(req, res, next).findById(),
-);
-
-carRouter.get(
-  '/cars',
-  (req, res, next) => new CarController(req, res, next).findAll(),
-);
-
-export default carRouter;
+export { carRouter, motorcycleRouter };
