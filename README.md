@@ -1,6 +1,6 @@
 # CarShop
 
-Projeto de um sistema de cadastro de veículos para comércio
+Projeto de um sistema de cadastro de veículos para comércio online. Sistema é um API REST com CRUD de múltiplos tipos de veículos. Desenvolvido em arquitetura MSC e visando o POO.
 
 ### Tecnologias utilizadas
 
