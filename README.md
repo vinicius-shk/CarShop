@@ -1,10 +1,21 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# CarShop
+
+Projeto de um sistema de cadastro de veículos para comércio
+
+### Tecnologias utilizadas
+
+- **TypeScript**
+- **Express.js**
+- **MongoDB**
+- **Mongoose**
+
+### Documentação
+
+Acesse a documentação online com casos de uso [aqui](https://documenter.getpostman.com/view/25780292/2s935snMZ1)
+
+### Para rodar localmente
+
+
+Clone o projeto para o seu repositório local.
+Acesse a raiz do projeto e rode o comando `npm run dev` <br>
+Faça as requisições de acordo com a documentação na porta **3001**
