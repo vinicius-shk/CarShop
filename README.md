@@ -17,5 +17,5 @@ Acesse a documentação online com casos de uso [aqui](https://documenter.getpos
 
 
 Clone o projeto para o seu repositório local.
-Acesse a raiz do projeto e rode o comando `npm run dev` <br>
+Acesse a raiz do projeto e rode o comando `npm i` e `npm run dev` <br>
 Faça as requisições de acordo com a documentação na porta **3001**
