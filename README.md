@@ -17,5 +17,19 @@ Acesse a documentação online com casos de uso [aqui](https://documenter.getpos
 
 
 Clone o projeto para o seu repositório local.
-Acesse a raiz do projeto e rode o comando `npm i` e `npm run dev` <br>
+```
+git clone git@github.com:vinicius-shk/CarShop.git
+```
+Acesse a raiz do projeto e rode os comandos para instalar as dependências e subir o Docker
+
+```
+cd CarShop && npm i && docker-compose up -d
+```
+
+Acesse o container trybesmith e inicie o servico de backend com nodemon
+
+```
+docker exec car_shop -it bash && npm run dev
+```
+
 Faça as requisições de acordo com a documentação na porta **3001**
